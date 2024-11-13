@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project</title>
+    <title>{{ title | default: "Project" }}</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <header>
-        <h1>{{ title | default: "My project" }}</h1>
-    </header>
-    <main>
-        {{ content }}
-    </main>
+    <div class="container">
+        {% include "nav.html" %}    
+        <main>
+            <h1>{{ title | default: "My project" }}</h1>
+            {{ content }}
+        </main>
+    </div>
 </body>
 </html>

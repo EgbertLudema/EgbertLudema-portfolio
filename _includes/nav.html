@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TTTXtreme</title>
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
-    <div class="container">
-        <head>
     <link rel="stylesheet" href="/css/nav.css">
 </head>
 
@@ -29,25 +19,17 @@
         </button>
         <nav class="site-header__nav">
             <ul class="site-header__items">
-                
+                {% for entry in collections.navPages | eleventyNavigation %}
                     <li class="site-header__item">
                         <a
-                            class="site-header__link"
-                            href="/projecten/"
+                            class="site-header__link{% if entry.url == page.url %} site-header__link--active{% endif %}"
+                            href="{{ entry.url | url }}"
                         >
-                            Projects
+                            {{ entry.data.eleventyNavigation.key }}
                         </a>
                     </li>
-                
+                {% endfor %}
             </ul>
         </nav>                          
     </div>
-</header>    
-        <main>
-            <h1>TTTXtreme</h1>
-            <p>Hello</p>
-
-        </main>
-    </div>
-</body>
-</html>
+</header>
