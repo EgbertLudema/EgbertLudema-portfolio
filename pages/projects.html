@@ -2,13 +2,23 @@
 layout: default_layout.html
 title: Projects
 eleventyNavigation:
-  key: Projects
-  order: 2
+    key: Projects
+    order: 2
 permalink: /projecten/
 ---
 
 <h2>Projects</h2>
-{% for post in collections.project %}
-<h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
-<p>{{ post.templateContent }}</p>
-{% endfor %}
+<div class="project__grid">
+    {% for post in collections.project %}
+        <a class="project__card" href="{{ post.url }}">
+            <div class="project__thumbnail">
+                <img src="{{ post.data.thumbnail }}" alt="Thumbnail {{ post.data.title }}">
+            </div>
+            <div class="project__card-content">
+                <h2>{{ post.data.title }}</h2>
+                <p class="project__date">{{ post.data.finished }}</p>
+                <p>{{ post.data.description }}</p>
+            </div>
+        </a>
+    {% endfor %}
+</div>

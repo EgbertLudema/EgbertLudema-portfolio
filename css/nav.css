@@ -35,6 +35,11 @@
     margin: 0 15px;
     font-weight: 500;
 }
+.site-header__item svg{
+    fill: var(--color-text);
+    width: 20px;
+    height: 20px;
+}
 .site-header__link {
     display: flex;
     align-items: center;
@@ -46,6 +51,9 @@
 .site-header__link:hover, .site-header__link--active{
     color: var(--color-blue);
     background: var(--color-bg-secondary);
+}
+.site-header__link:hover svg{
+    fill: var(--color-blue);
 }
 @media screen and (max-width: 768px)  {
     .site-header__mobile-nav{
