@@ -31,11 +31,13 @@ body{
 /* Project */
 .project__grid{
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
     gap: 20px;
     width: 100%;
 }
 .project__card{
-    flex: 50%;
+    width: calc(50% - 20px);
     background-color: var(--color-bg);
     color: var(--color-text);
     border: 1px solid var(--color-border);
@@ -44,27 +46,48 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 50vh;
-    text-decoration: none;
+    height: 400px;
+    overflow: clip;
 }
 .project__thumbnail{
-    flex: 50%;
+    flex: 60%;
     overflow: hidden;
     display: flex;
     justify-content: center;
 }
 .project__thumbnail img{
-    max-width: 100%;
-    max-height: 100%;
-    padding: 20px;
+    width: 100%;
+    object-fit: cover;
 }
 .project__card-content{
-    flex: 50%;
+    flex: 40%;
     padding: 15px 20px;
+}
+.project__link{
+    text-decoration: none;
+    color: var(--color-blue);
+}
+.project__link:hover{
+    text-decoration: underline;
 }
 .project__card-content .project__date{
     margin: 0;
     position: relative;
     top: -20px;
     font-size: 12px;
+}
+.project__tags{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    width: fit-content;
+}
+.project__tag{
+    padding: 6px 8px;
+    border-radius: var(--border-radius-sm);
+    background: var(--color-blue);
+    color: #fff;
+    font-size: 13px;
+    text-transform: lowercase;
+    font-weight: 500;
 }

@@ -17,4 +17,11 @@ module.exports = function (eleventyConfig) {
             );
         });
     });
+
+    // Custom collection for projects sorted by date, newest first
+    eleventyConfig.addCollection("project", (collectionApi) => {
+        return collectionApi.getFilteredByTag("project").sort((a, b) => {
+            return b.date - a.date; // Sort by date descending
+        });
+    });
 };
