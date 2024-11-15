@@ -24,4 +24,17 @@ module.exports = function (eleventyConfig) {
             return b.date - a.date; // Sort by date descending
         });
     });
+
+    // Generate a list of all unique tags
+    eleventyConfig.addCollection("allTags", collection => {
+        const tagSet = new Set();
+        collection.getAll().forEach(item => {
+            (item.data.tags || []).forEach(tag => {
+                if (tag !== "project") {
+                    tagSet.add(tag);
+                }
+            });
+        });
+        return [...tagSet].sort();
+    });
 };

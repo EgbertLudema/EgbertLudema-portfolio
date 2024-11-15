@@ -7,20 +7,38 @@ eleventyNavigation:
 permalink: /projecten/
 ---
 
+<div class="filter__tags">
+    <h3>Filter by tags:</h3>
+    <div class="filter__options">
+        {% for tag in collections.allTags %}
+            {% if tag != "project" %}
+                <button class="filter__tag" data-tag="{{ tag }}">{{ tag }}</button>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
 <div class="project__grid">
     {% for post in collections.project %}
-        <div class="project__card">
+        <div class="project__card" data-tags="{{ post.data.tags | join: ',' }}">
             <div class="project__thumbnail">
                 <img src="{{ post.data.thumbnail }}" alt="Thumbnail {{ post.data.title }}">
             </div>
-            <div class="project__card-content">
-                <h2><a class="project__link" href="{{ post.url }}">{{ post.data.title }}</a></h2>
-                <p class="project__date">{{ post.data.finished }}</p>
+            <div class="project__content">
+                <div class="project__heading">
+                    <div class="project__title">
+                        <h2>{{ post.data.title }}</h2>
+                        <p class="project__date">{{ post.data.finished }}</p>
+                    </div>
+                    <div class="project__discover">
+                        <a class="project__link" href="{{ post.url }}">discover<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18,12h0a2,2,0,0,0-.59-1.4l-4.29-4.3a1,1,0,0,0-1.41,0,1,1,0,0,0,0,1.42L15,11H5a1,1,0,0,0,0,2H15l-3.29,3.29a1,1,0,0,0,1.41,1.42l4.29-4.3A2,2,0,0,0,18,12Z"/></svg></a>
+                    </div>
+                </div>
                 <p>{{ post.data.description }}</p>
                 <div class="project__tags">
                     {% for tag in post.data.tags %}
                         {% if tag != "project" %}
-                            <span class="project__tag">{{ tag }}</span>
+                            <span class="project__tag" data-tag="{{ tag }}">{{ tag }}</span>
                         {% endif %}
                     {% endfor %}
                 </div>
@@ -28,3 +46,51 @@ permalink: /projecten/
         </div>
     {% endfor %}
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const filterButtons = document.querySelectorAll(".filter__tag");
+    const projectCards = document.querySelectorAll(".project__card");
+    const activeTags = new Set();
+
+    // Update filtering based on selected tags
+    function updateFilter() {
+        projectCards.forEach(card => {
+            const tags = card.dataset.tags.split(",");
+            const isVisible = [...activeTags].every(tag => tags.includes(tag));
+            if (isVisible) {
+                card.classList.remove("hidden");
+            } else {
+                card.classList.add("hidden");
+            }
+        });
+    }
+
+    // Add event listeners to filter buttons
+    filterButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const tag = button.dataset.tag;
+            if (activeTags.has(tag)) {
+                activeTags.delete(tag);
+                button.classList.remove("active");
+            } else {
+                activeTags.add(tag);
+                button.classList.add("active");
+            }
+            updateFilter();
+        });
+    });
+
+    // Allow filtering via project tag clicks
+    document.querySelectorAll(".project__tag").forEach(tagElement => {
+        tagElement.addEventListener("click", () => {
+            const tag = tagElement.dataset.tag;
+            const button = document.querySelector(`.filter__tag[data-tag="${tag}"]`);
+            if (button) {
+                button.click(); // Simulate button click for filtering
+            }
+        });
+    });
+});
+
+</script>

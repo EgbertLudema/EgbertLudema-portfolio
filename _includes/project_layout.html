@@ -11,8 +11,10 @@
         {% include "nav.html" %}    
         <main>
             <h1>{{ title | default: "My project" }}</h1>
+            <hr />
             {{ content }}
         </main>
     </div>
+    {% include "footer.html" %}
 </body>
 </html>

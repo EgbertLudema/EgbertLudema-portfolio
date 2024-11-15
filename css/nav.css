@@ -13,6 +13,10 @@
 }
 .site-header__logo, .site-header__logo  img{
     max-height: var(--header-height);
+    transition: all .3s ease;
+}
+.site-header__logo:hover img{
+    transform: scale(1.05);
 }
 .site-header__mobile-nav{
     display: none;
@@ -39,6 +43,7 @@
     fill: var(--color-text);
     width: 20px;
     height: 20px;
+    transition: all .2s ease;
 }
 .site-header__link {
     display: flex;
@@ -47,6 +52,7 @@
     border-radius: var(--border-radius-sm);
     color: var(--color-text);
     text-decoration: none;
+    transition: all .3s ease;
 }
 .site-header__link:hover, .site-header__link--active{
     color: var(--color-blue);
