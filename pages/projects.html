@@ -7,19 +7,22 @@ eleventyNavigation:
 permalink: /projecten/
 ---
 
+<div class="filter__search">
+    <svg xmlns="http://www.w3.org/2000/svg" id="searchIcon" viewBox="0 0 24 24" width="512" height="512">
+        <path d="M23.707,22.293l-5.969-5.969a10.016,10.016,0,1,0-1.414,1.414l5.969,5.969a1,1,0,0,0,1.414-1.414ZM10,18a8,8,0,1,1,8-8A8.009,8.009,0,0,1,10,18Z"/>
+    </svg>
+    <input type="text" id="tagSearch" placeholder="Search tags..." />
+    <button id="clearSearch" aria-label="Clear search">✖</button>
+</div>
+
 <div class="filter__tags">
     <div class="filter__options">
-        {% for tag in collections.allTags %}
-            {% if tag != "project" %}
-                <button class="filter__tag" data-tag="{{ tag }}">{{ tag }}</button>
-            {% endif %}
+        {% for tagData in collections.allTags %}
+            <button class="filter__tag" data-tag="{{ tagData.tag }}">
+                {{ tagData.tag }} ({{ tagData.count }})
+            </button>
         {% endfor %}
     </div>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path d="M1,4.75H3.736a3.728,3.728,0,0,0,7.195,0H23a1,1,0,0,0,0-2H10.931a3.728,3.728,0,0,0-7.195,0H1a1,1,0,0,0,0,2ZM7.333,2a1.75,1.75,0,1,1-1.75,1.75A1.752,1.752,0,0,1,7.333,2Z"/>
-        <path d="M23,11H20.264a3.727,3.727,0,0,0-7.194,0H1a1,1,0,0,0,0,2H13.07a3.727,3.727,0,0,0,7.194,0H23a1,1,0,0,0,0-2Zm-6.333,2.75A1.75,1.75,0,1,1,18.417,12,1.752,1.752,0,0,1,16.667,13.75Z"/>
-        <path d="M23,19.25H10.931a3.728,3.728,0,0,0-7.195,0H1a1,1,0,0,0,0,2H3.736a3.728,3.728,0,0,0,7.195,0H23a1,1,0,0,0,0-2ZM7.333,22a1.75,1.75,0,1,1,1.75-1.75A1.753,1.753,0,0,1,7.333,22Z"/>
-    </svg>
 </div>
 
 <div class="project__grid">
@@ -35,7 +38,7 @@ permalink: /projecten/
                         <p class="project__date">{{ post.data.finished }}</p>
                     </div>
                     <div class="project__discover">
-                        <a class="project__link" href="{{ post.url }}">discover<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18,12h0a2,2,0,0,0-.59-1.4l-4.29-4.3a1,1,0,0,0-1.41,0,1,1,0,0,0,0,1.42L15,11H5a1,1,0,0,0,0,2H15l-3.29,3.29a1,1,0,0,0,1.41,1.42l4.29-4.3A2,2,0,0,0,18,12Z"/></svg></a>
+                        <a class="secondair_btn" href="{{ post.url }}">discover<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18,12h0a2,2,0,0,0-.59-1.4l-4.29-4.3a1,1,0,0,0-1.41,0,1,1,0,0,0,0,1.42L15,11H5a1,1,0,0,0,0,2H15l-3.29,3.29a1,1,0,0,0,1.41,1.42l4.29-4.3A2,2,0,0,0,18,12Z"/></svg></a>
                     </div>
                 </div>
                 <p>{{ post.data.description }}</p>
@@ -51,12 +54,49 @@ permalink: /projecten/
     {% endfor %}
 </div>
 
+<h3>More projects in the future😄</h3>
+
 <script>
 document.addEventListener("DOMContentLoaded", () => {
+    const searchInput = document.getElementById("tagSearch");
+    const searchIcon = document.getElementById("searchIcon");
+    const clearButton = document.getElementById("clearSearch");
     const filterButtons = document.querySelectorAll(".filter__tag");
     const projectCards = document.querySelectorAll(".project__card");
     const projectTags = document.querySelectorAll(".project__tag");
     const activeTags = new Set();
+
+    // Show or hide the clear button based on input value
+    searchInput.addEventListener("input", () => {
+        if (searchInput.value) {
+            clearButton.classList.add("visible");
+        } else {
+            clearButton.classList.remove("visible");
+        }
+    });
+
+    // Clear the input field when the clear button is clicked
+    clearButton.addEventListener("click", () => {
+        searchInput.value = "";
+        clearButton.classList.remove("visible");
+
+        // Trigger input event to refresh the tag filter
+        searchInput.dispatchEvent(new Event("input"));
+    });
+
+    // Focus on the input field when the SVG is clicked
+    searchIcon.addEventListener("click", () => {
+        searchInput.focus();
+    });
+
+    // Filter tags based on search input
+    searchInput.addEventListener("input", () => {
+        const searchValue = searchInput.value.toLowerCase();
+        filterButtons.forEach(button => {
+            const tag = button.dataset.tag.toLowerCase();
+            button.style.display = tag.includes(searchValue) ? "inline-block" : "none";
+        });
+    });
 
     // Update filtering based on selected tags
     function updateFilter() {
@@ -66,7 +106,6 @@ document.addEventListener("DOMContentLoaded", () => {
             card.style.display = isVisible ? "flex" : "none";
         });
 
-        // Update active state for project tags
         projectTags.forEach(tagElement => {
             const tag = tagElement.dataset.tag;
             if (activeTags.has(tag)) {
@@ -76,7 +115,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
-        // Update active state for filter buttons
         filterButtons.forEach(button => {
             const tag = button.dataset.tag;
             if (activeTags.has(tag)) {
@@ -113,4 +151,4 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
-</script>
+</script>    

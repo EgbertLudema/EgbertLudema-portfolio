@@ -26,15 +26,24 @@ module.exports = function (eleventyConfig) {
     });
 
     // Generate a list of all unique tags
-    eleventyConfig.addCollection("allTags", collection => {
-        const tagSet = new Set();
-        collection.getAll().forEach(item => {
-            (item.data.tags || []).forEach(tag => {
-                if (tag !== "project") {
-                    tagSet.add(tag);
+    eleventyConfig.addCollection("allTags", (collection) => {
+        const tagCount = {};
+    
+        // Iterate over all items in the collection
+        collection.getAll().forEach((item) => {
+            (item.data.tags || []).forEach((tag) => {
+                if (tag !== "project") { // Exclude the "project" tag
+                    if (!tagCount[tag]) {
+                        tagCount[tag] = 0;
+                    }
+                    tagCount[tag]++;
                 }
             });
         });
-        return [...tagSet].sort();
-    });
+    
+        // Convert the tagCount object into an array of { tag, count } objects, sorted by tag
+        return Object.entries(tagCount)
+            .map(([tag, count]) => ({ tag, count }))
+            .sort((a, b) => a.tag.localeCompare(b.tag)); // Sort alphabetically
+    });    
 };

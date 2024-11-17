@@ -11,6 +11,9 @@
         {% include "nav.html" %}
         <main>
             <h1>{{ title }}</h1>
+            {% if subtitle %}
+                <h2>{{ subtitle }}</h2>
+            {% endif %}
             <hr />
             {{ content }}
         </main>

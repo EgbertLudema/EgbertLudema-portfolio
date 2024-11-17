@@ -4,6 +4,6 @@ description: Voor een school project was ik als lead dev verantwoordelijk voor h
 thumbnail: /assets/projects/steunpunt-friesland/Screenshot_Tool_SteunpuntFriesland.png
 finished: Jul 2024
 date: 2024-07-01
-tags: ["Laravel", "Filament", "Supabase", "Lead dev"]
+tags: ["Laravel", "Filament", "Supabase", "HTML", "CSS", "JavaScript"]
 ---
 Hello
