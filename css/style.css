@@ -87,9 +87,16 @@ hr{
     display: block;
     width: 100%;
     margin: 40px 0px;
-    height: .1em;
+    height: .15em;
     background: var(--color-gradient);
     border-radius: var(--border-radius-sm);
+    border: none;
+}
+hr.hr_secondair{
+    background: #cacaca;
+    margin: 10px 0;
+    border: 0;
+    height: .1em;
 }
 /* Homepage */
 /* Homepage - personal */
@@ -203,12 +210,78 @@ hr{
     margin: 0;
     margin-bottom: 20px;
 }
+/* About me */
+#about-me h2{
+    font-size: 1.5em;
+}
+/* About me - Skills */
+.skills__grid{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 10px;
+}
+.skill{
+    flex: 1;
+    background: var(--color-bg-secondary);
+    border-radius: var(--border-radius-sm);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--color-border);
+    transition: all .3s ease;
+}
+.skill:hover{
+    transform: scale(1.05);
+    box-shadow: var(--shadow);
+}
+.skill__img{
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--border-radius);
+    padding: 10px;
+    margin: 10px;
+}
+.skill__img.figma{
+    background: rgba(10,207,131,.2);
+}
+.skill__img.javascript{
+    background: rgba(207,186,10,.2);
+}
+.skill__img.git{
+    background: rgba(204, 65, 40, .2);
+}
+.skill__img.kotlin{
+    background: rgba(229, 117, 76, .2);
+}
+.skill__img.html{
+    background: rgba(204, 65, 40, .2);
+}
+.skill__img.css{
+    background: rgba(36, 101, 241, .2);
+}
+.skill__img.php{
+    background: rgba(137, 147, 190, .2);
+}
+.skill__content{
+    min-width: 130px;
+}
+.skill__content > *{
+    margin: 0;
+}
+.skill__content p{
+    font-size: .7em;
+}
 /* Project */
 .filter__search{
     height: 40px;
     display: flex;
     align-items: center;
-    width: 100%;
+    /* width - border */
+    width: calc(100% - 4px);
     border-radius: var(--border-radius);
     border: 2px solid var(--color-blue);
     overflow: hidden;

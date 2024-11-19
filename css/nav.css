@@ -14,7 +14,7 @@
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
     width: 100%;
-    max-width: var(--site-width);
+    max-width: calc(var(--site-width) - 20px);
     position: fixed;
     z-index: 999;
 }
@@ -77,5 +77,11 @@
     }
     .site-header__nav{
         display: none;
+    }
+}
+/* max-width = var(--site-width) */
+@media only screen and (max-width: 968px){
+    .site-header__container{
+        width: calc(100% - 40px);
     }
 }
