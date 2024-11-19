@@ -9,13 +9,17 @@
                 <img src="/assets/images/EL-no-bg-large.png" alt="logo EL" />
             </a>
         </span>
+        <!-- Hamburger button -->
         <button
-            class="site-header__mobile-nav"
-            data-drawer-trigger=""
-            aria-controls="drawer-name"
+            class="site-header__mobile-nav hamburger"
+            aria-controls="site-menu"
             aria-expanded="false"
+            tabindex="0"
         >
-            <span class="site-header__mobile-nav-label">Menu</span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
         </button>
         <nav class="site-header__nav">
             <ul class="site-header__items">
@@ -47,3 +51,27 @@
         </nav>                          
     </div>
 </header>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const hamburger = document.querySelector(".hamburger");
+        const menu = document.querySelector(".site-header__nav");
+        const body = document.body;
+
+        hamburger.addEventListener("click", () => {
+            const isOpen = hamburger.getAttribute("aria-expanded") === "true";
+            hamburger.setAttribute("aria-expanded", !isOpen);
+            menu.classList.toggle("is-open");
+            body.classList.toggle("menu-open");
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener("click", (event) => {
+            if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
+                hamburger.setAttribute("aria-expanded", "false");
+                menu.classList.remove("is-open");
+                body.classList.remove("menu-open");
+            }
+        });
+    });
+</script>
