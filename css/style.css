@@ -417,8 +417,35 @@ hr.hr_secondair{
 }
 .project__tags{
     display: flex;
-    justify-content: space-between;
     gap: 10px;
     width: fit-content;
     flex-wrap: wrap;
+}
+@media (max-width: 768px) {
+    h1{
+        font-size: 3em;
+    }
+    .personal{
+        flex-direction: column-reverse;
+        height: unset;
+    }
+    .personal > *{
+        width: 100%;
+    }
+    .personal__img{
+        display: flex;
+        justify-content: center;
+    }
+    .personal__img img{
+        max-height: 300px;
+    }
+    .home__project_header .secondair_btn{
+        display: none;
+    }
+    .project__card, .home__project_card{
+        width: 100%;
+    }
+    .home__project_content, .project__content{
+        height: unset;
+    }
 }
