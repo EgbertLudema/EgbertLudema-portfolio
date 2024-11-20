@@ -26,7 +26,7 @@ permalink: /projecten/
 </div>
 
 <div class="project__grid">
-    {% for post in collections.project %}
+    {% for post in collections.allProjects %}
         <div class="project__card" data-tags="{{ post.data.tags | join: ',' }}">
             <div class="project__thumbnail">
                 <img src="{{ post.data.thumbnail }}" alt="Thumbnail {{ post.data.title }}">
@@ -43,7 +43,8 @@ permalink: /projecten/
                 </div>
                 <p>{{ post.data.description }}</p>
                 <div class="project__tags">
-                    {% for tag in post.data.tags %}
+                    {% assign sortedTags = post.data.tags | sort %}
+                    {% for tag in sortedTags %}
                         {% if tag != "project" %}
                             <span class="project__tag" data-tag="{{ tag }}">{{ tag }}</span>
                         {% endif %}
