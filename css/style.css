@@ -199,8 +199,12 @@ hr.hr_secondair{
     width: 100%;
     max-height: unset;
 }
+.home__project_heading{
+    justify-content: space-between;
+    gap: 10px;
+}
 .home__project_content{
-    height: 100px;
+    height: 140px;
     padding: 20px;
 }
 .project__content h2, .home__project_content h2{
@@ -208,7 +212,6 @@ hr.hr_secondair{
  }
 .home__project_content h2{
     margin: 0;
-    margin-bottom: 20px;
 }
 /* About me */
 #about-me h2{
@@ -232,7 +235,7 @@ hr.hr_secondair{
     transition: all .3s ease;
 }
 .skill:hover{
-    transform: scale(1.05);
+    transform: scale(1.01);
     box-shadow: var(--shadow);
 }
 .skill__img{
@@ -249,18 +252,17 @@ hr.hr_secondair{
     background: rgba(10,207,131,.2);
 }
 .skill__img.javascript{
-    background: rgba(207,186,10,.2);
+    background: rgba(226,226,5,.2);
 }
-.skill__img.git{
-    background: rgba(204, 65, 40, .2);
-}
-.skill__img.kotlin{
+.skill__img.kotlin,
+.skill__img.html,
+.skill__img.git,
+.skill__img.svelte,
+.skill__img.laravel{
     background: rgba(229, 117, 76, .2);
 }
-.skill__img.html{
-    background: rgba(204, 65, 40, .2);
-}
-.skill__img.css{
+.skill__img.css,
+.skill__img.jetpack{
     background: rgba(36, 101, 241, .2);
 }
 .skill__img.php{
@@ -438,6 +440,10 @@ hr.hr_secondair{
     }
     .personal__img img{
         max-height: 300px;
+    }
+    .personal h1,
+    .personal__text{
+        text-align: center;
     }
     .home__project_header .secondair_btn{
         display: none;
