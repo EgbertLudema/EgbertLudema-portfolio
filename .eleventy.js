@@ -1,5 +1,20 @@
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
+// Get all projects and sort them(active first, then by date)
+function getSortedProjects(collectionApi) {
+    return collectionApi.getFilteredByTag("project").sort((a, b) => {
+        const isActiveA = a.data.finished === "Actief";
+        const isActiveB = b.data.finished === "Actief";
+
+        // Active projects first
+        if (isActiveA && !isActiveB) return -1;
+        if (!isActiveA && isActiveB) return 1;
+
+        // Then sort by date
+        return (b.date || 0) - (a.date || 0);
+    });
+}
+
 module.exports = function (eleventyConfig) {
     // Add the navigation plugin
     eleventyConfig.addPlugin(eleventyNavigationPlugin);
@@ -18,11 +33,14 @@ module.exports = function (eleventyConfig) {
         });
     });
 
-    // Custom collection for projects sorted by date, newest first
-    eleventyConfig.addCollection("project", (collectionApi) => {
-        return collectionApi.getFilteredByTag("project").sort((a, b) => {
-            return b.date - a.date; // Sort by date descending
-        });
+    // All projects
+    eleventyConfig.addCollection("allProjects", (collectionApi) => {
+        return getSortedProjects(collectionApi);
+    });
+
+    // Most recent projects, total of 4
+    eleventyConfig.addCollection("recentProjects", (collectionApi) => {
+        return getSortedProjects(collectionApi).slice(0, 4);
     });
 
     // Generate a list of all unique tags
