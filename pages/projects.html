@@ -151,5 +151,22 @@ document.addEventListener("DOMContentLoaded", () => {
             updateFilter();
         });
     });
+
+    // Function to get URL parameters(from project clicked tags)
+    function getUrlParameter(name) {
+        name = name.replace(/[\[\]]/g, '\\$&'); // Escape special characters
+        const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
+        const results = regex.exec(window.location.href);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+
+    // Read the 'tag' parameter from the URL
+    const urlTag = getUrlParameter('tag');
+    if (urlTag) {
+        activeTags.add(urlTag);
+        updateFilter();
+    }
 });
 </script>    

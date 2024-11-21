@@ -44,6 +44,22 @@ img{
     max-width: 100%;
     max-height: 100%;
 }
+.primary_btn{
+    color: #fff;
+    background: var(--color-blue);
+    display: flex;
+    gap: 2px;
+    position: relative;
+    width: fit-content;
+    transition: all .3s ease;
+    text-decoration: none;
+    padding: 8px 8px 8px 10px;
+    border: 2px solid var(--color-blue);
+    border-radius: var(--border-radius);
+}
+.primary_btn:hover{
+    transform: translateY(-2px);
+}
 .secondair_btn{
     text-decoration: none;
     color: var(--color-blue);
@@ -110,6 +126,10 @@ hr.hr_secondair{
 }
 .personal__img, .personal__content{
     width: 50%;
+}
+.personal__img{
+    display: flex;
+    align-items: center;
 }
 .personal__content{
     display: flex;
@@ -358,6 +378,11 @@ hr.hr_secondair{
     background: #fff;
     transition: all .2s ease;
 }
+.filter__tag:hover, 
+.project__tag:hover{
+    transform: translateY(-1px);
+    text-decoration: none;
+}
 .filter__tag.active, .project__tag.active {
     background: var(--color-blue);
     color: #fff;
@@ -423,6 +448,50 @@ hr.hr_secondair{
     gap: 10px;
     width: fit-content;
     flex-wrap: wrap;
+}
+.project__header{
+    position: relative;
+}
+.project__links{
+    position: absolute;
+    bottom: -35px;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.project__foto_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, calc(50% - 5px)));
+    gap: 10px;
+    align-items: center;
+    margin: 30px 0;
+}
+.project__foto_grid figure{
+    position: relative;
+    margin: 0;
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    border-radius: var(--border-radius-sm);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--color-border);
+}
+.project__foto_grid figure figcaption{
+    position: absolute;
+    bottom: 0;
+    background: #fff;
+    width: calc(100% - 20px);
+    padding: 10px;
+    border-top: 1px solid var(--color-border);
+}
+.project__foto_grid img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    padding-bottom: 40px;
 }
 @media (max-width: 768px) {
     h1{
