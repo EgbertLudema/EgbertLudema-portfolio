@@ -6,4 +6,8 @@ finished: Actief
 date:
 tags: ["Kotlin", "UX", "UI", "Firebase", "Firestore"]
 ---
-Hello
+
+## Development
+*Ik ben op het moment nog druk bezig met het bouwen van de app!*
+
+## Design

@@ -10,9 +10,30 @@
     <div class="container">
         {% include "nav.html" %}    
         <main>
-            <h1>{{ title | default: "My project" }}</h1>
+            <div class="project__header">
+                <h1>{{ title | default: "My project" }}</h1>
+                {% if links %}
+                    <div class="project__links">
+                        {% for link in links %}
+                        <a href="{{ link.url }}" class="secondair_btn" target="_blank">
+                            {{ link.caption }}
+                        </a>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
             <hr />
             {{ content }}
+            <hr class="hr_secondair">
+            <h3>Tags:</h3>
+            <div class="project__tags">
+                {% assign sortedTags = tags | sort %}
+                {% for tag in sortedTags %}
+                    {% if tag != "project" %}
+                        <a href="/projecten/?tag={{ tag }}" class="project__tag" data-tag="{{ tag }}">{{ tag }}</a>
+                    {% endif %}
+                {% endfor %}
+            </div>
         </main>
     </div>
     {% include "footer.html" %}
