@@ -137,6 +137,9 @@ hr.hr_secondair{
     justify-content: center;
     gap: 10px;
 }
+.personal__text{
+    cursor: default;
+}
 .personal__text h1{
     margin: 30px 0;
 }
@@ -233,6 +236,11 @@ hr.hr_secondair{
  }
 .home__project_content h2{
     margin: 0;
+}
+.under-more{
+    margin: 30px 0px;
+    display: flex;
+    justify-content: flex-end;
 }
 /* About me */
 #about-me h2{
@@ -523,5 +531,22 @@ hr.hr_secondair{
     }
     .home__project_content, .project__content{
         height: unset;
+    }
+}
+/* Animations */
+.animation__wave{
+    transform-origin: bottom right;
+    display: inline-block;
+}
+.personal__text:hover .animation__wave{
+    animation: wave .6s ease-in-out 3 alternate;
+    cursor: default;
+}
+@keyframes wave{
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(20deg);
     }
 }

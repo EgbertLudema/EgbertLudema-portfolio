@@ -25,13 +25,18 @@ module.exports = function (eleventyConfig) {
 
     // Specify a collection to get only index and pages in /pages directory
     eleventyConfig.addCollection("navPages", (collection) => {
-        return collection.getAll().filter((item) => {
-            // Only include items with eleventyNavigation in the front matter
-            return item.data.eleventyNavigation && (
-                item.inputPath.includes("/pages/")
-            );
-        });
-    });
+        return collection.getAll()
+            .filter((item) => {
+                // Only include items in the /pages/ directory that have eleventyNavigation in the front matter
+                return item.data.eleventyNavigation && item.inputPath.includes("/pages/");
+            })
+            .sort((a, b) => {
+                // Sort by the `order` property in the front matter
+                const orderA = a.data.eleventyNavigation.order || 0;
+                const orderB = b.data.eleventyNavigation.order || 0;
+                return orderA - orderB;
+            });
+    });       
 
     // All projects
     eleventyConfig.addCollection("allProjects", (collectionApi) => {
