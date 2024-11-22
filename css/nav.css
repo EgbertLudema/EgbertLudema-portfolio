@@ -124,11 +124,6 @@
     top: 10px;
     transform: rotate(-135deg);
 }
-.under-more{
-    margin: 20px 0px;
-    display: flex;
-    justify-content: center;
-}
 /* max-width = var(--site-width) */
 @media only screen and (max-width: 968px){
     .site-header__container{
