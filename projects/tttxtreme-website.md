@@ -8,6 +8,17 @@ tags: ["PHP", "API", "MYSQL", "HTML", "CSS", "JavaScript"]
 links:
   - url: "https://tttextreme.com/"
     caption: "Live website"
+gallery:
+  - src: "/assets/projects/tttextreme_website/paper_tttextreme.jpg"
+    alt: "Papier versie tic tac toe extreme"
+    caption: "Hoe we het voorheen speelden op papier"
+  - src: "/assets/projects/tttextreme_website/website_tttextreme.png"
+    alt: "Website versie tic tac toe extreme"
+    caption: "Hoe we het op de website spelen"
+  - src: "/assets/projects/tttextreme_website/Scoreboard_tttextreme.png"
+    alt: "Scoreboard tic tac toe extreme"
+    caption: "Scoreboard houd alles automatisch bij"
+
 ---
 ## Waarom een side-quest?
 
@@ -21,22 +32,3 @@ Door een webapp te bouwen voor dit spel, heb ik de volgende problemen opgelost w
 - Makkelijker op te zetten
 - Houdt automatisch de score bij
 - Overzichtelijker wie aan de beurt is en waar deze mag spelen
-
-<hr>
-
-<h3>Gallery:</h3>
-
-<div class="project__foto_grid">
-    <figure>
-        <img src="/assets/projects/tttextreme_website/paper_tttextreme.jpg" alt="Papier versie tic tac toe extreme">
-        <figcaption>Hoe we het voorheen speelden op papier</figcaption>
-    </figure>
-    <figure>
-        <img src="/assets/projects/tttextreme_website/website_tttextreme.png" alt="Website versie tic tac toe extreme">
-        <figcaption>Hoe we het op de website spelen</figcaption>
-    </figure>
-    <figure>
-        <img src="/assets/projects/tttextreme_website/Scoreboard_tttextreme.png" alt="Scoreboard tic tac toe extreme">
-        <figcaption>Scoreboard houd alles automatisch bij</figcaption>
-    </figure>
-</div>

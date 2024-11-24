@@ -8,6 +8,20 @@ tags: ["Laravel", "Filament", "Supabase", "HTML", "CSS", "JavaScript"]
 links:
   - url: "https://github.com/EgbertLudema/Steunpunt-Friesland"
     caption: "github"
+gallery:
+  - src: "/assets/projects/steunpunt-friesland/login.png"
+    alt: "Login Steunpunt Friesland"
+    caption: "Login scherm"
+  - src: "/assets/projects/steunpunt-friesland/dashboard.png"
+    alt: "Dashboard Steunpunt Friesland"
+    caption: "Dashboard/landings pagina"
+  - src: "/assets/projects/steunpunt-friesland/locations.png"
+    alt: "Alle locaties Steunpunt Friesland"
+    caption: "Alle locaties"
+  - src: "/assets/projects/steunpunt-friesland/locations_filtered.png"
+    alt: "Gefilterde locaties Steunpunt Friesland"
+    caption: "Gefilterde locaties"
+
 ---
 
 ## Waarom Steunpunt Friesland?
@@ -42,26 +56,3 @@ We gebruikten het [Laravel framework](https://laravel.com/) in combinatie met [F
 - Sectoren verwijderen
 
 Binnen korte tijd hebben we een werkende versie van de tool opgeleverd, waarmee Steunpunt Friesland nu efficiënter en overzichtelijker kan werken.
-
-<hr>
-
-<h3>Gallery:</h3>
-
-<div class="project__foto_grid">
-    <figure>
-        <img src="/assets/projects/steunpunt-friesland/login.png" alt="Login Steunpunt Friesland">
-        <figcaption>Login scherm</figcaption>
-    </figure>
-    <figure>
-        <img src="/assets/projects/steunpunt-friesland/dashboard.png" alt="Dashboard Steunpunt Friesland">
-        <figcaption>Dashboard/landings pagina</figcaption>
-    </figure>
-    <figure>
-        <img src="/assets/projects/steunpunt-friesland/locations.png" alt="Alle locaties Steunpunt Friesland">
-        <figcaption>Alle locaties</figcaption>
-    </figure>
-    <figure>
-        <img src="/assets/projects/steunpunt-friesland/locations_filtered.png" alt="Gefilterde locaties Steunpunt Friesland">
-        <figcaption>Gefilterde locaties</figcaption>
-    </figure>
-</div>
