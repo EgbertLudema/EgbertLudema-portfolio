@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title | default: "Project" }}</title>
+    <link rel="icon" href="/assets/images/favicon.png" type="image/png">
     <link rel="stylesheet" href="/css/style.css">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QM3RGPNLQ7"></script>
@@ -18,7 +19,7 @@
 <body>
     <div class="container">
         {% include "nav.html" %}    
-        <main>
+        <main class="project">
             <div class="project__header">
                 <h1>{{ title | default: "My project" }}</h1>
                 {% if links %}
@@ -32,7 +33,51 @@
                 {% endif %}
             </div>
             <hr />
+            <figure>
+                <img src="{{thumbnail}}" alt="Thumbnail {{title}}">
+            </figure>
             {{ content }}
+
+            <!-- Project gallery -->
+            {% if gallery %}
+                <hr>
+                <h3>Gallery:</h3>
+                <div class="project__foto_grid">
+                    {% for image in gallery %}
+                    <figure data-fullscreen="{{ image.src }}">
+                        <img src="{{ image.src }}" alt="{{ image.alt }}">
+                        <figcaption>{{ image.caption }}</figcaption>
+                    </figure>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            
+            <!-- Fullscreen Modal -->
+            <div class="fullscreen-modal hidden">
+                <div class="fullscreen-modal_container">
+                    {% assign gallerySize = gallery | size %}
+                    {% if gallerySize > 1 %}
+                        <button class="prev-modal" aria-label="Previous image">
+                            <svg xmlns="http://www.w3.org/2000/svg" id="Bold" viewBox="0 0 24 24">
+                                <path d="M10.957,12.354a.5.5,0,0,1,0-.708l4.586-4.585a1.5,1.5,0,0,0-2.121-2.122L8.836,9.525a3.505,3.505,0,0,0,0,4.95l4.586,4.586a1.5,1.5,0,0,0,2.121-2.122Z"/>
+                            </svg>
+                        </button>
+                    {% endif %}
+                    <div class="fullscreen-content">
+                        <img src="" alt="Fullscreen view">
+                    </div>
+                    {% if gallerySize > 1 %}
+                        <button class="next-modal" aria-label="Next image">
+                            <svg xmlns="http://www.w3.org/2000/svg" id="Bold" viewBox="0 0 24 24">
+                                <path d="M15.75,9.525,11.164,4.939A1.5,1.5,0,0,0,9.043,7.061l4.586,4.585a.5.5,0,0,1,0,.708L9.043,16.939a1.5,1.5,0,0,0,2.121,2.122l4.586-4.586A3.505,3.505,0,0,0,15.75,9.525Z"/>
+                            </svg>
+                        </button>
+                        {% endif %}
+                </div>
+                <button class="close-modal" aria-label="Close fullscreen view">×</button>
+            </div>
+            
+            
             <hr class="hr_secondair">
             <h3>Tags:</h3>
             <div class="project__tags">
@@ -47,4 +92,70 @@
     </div>
     {% include "footer.html" %}
 </body>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const figures = Array.from(document.querySelectorAll('.project__foto_grid figure'));
+    const modal = document.querySelector('.fullscreen-modal');
+    const modalImage = modal.querySelector('img');
+    const closeModalButton = modal.querySelector('.close-modal');
+    const prevModalButton = modal.querySelector('.prev-modal');
+    const nextModalButton = modal.querySelector('.next-modal');
+
+    let currentIndex = 0;
+
+    // Function to show an image in the modal
+    const showImage = (index) => {
+        const figure = figures[index];
+        const imgSrc = figure.dataset.fullscreen;
+        modalImage.src = imgSrc;
+        currentIndex = index;
+        modal.classList.remove('hidden');
+    };
+
+    // Open modal on figure click
+    figures.forEach((figure, index) => {
+        figure.addEventListener('click', () => {
+            showImage(index);
+        });
+    });
+
+    // Close modal
+    closeModalButton.addEventListener('click', () => {
+        modal.classList.add('hidden');
+    });
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.add('hidden');
+        }
+    });
+
+    // Show previous image
+    prevModalButton.addEventListener('click', () => {
+        const newIndex = (currentIndex - 1 + figures.length) % figures.length;
+        showImage(newIndex);
+    });
+
+    // Show next image
+    nextModalButton.addEventListener('click', () => {
+        const newIndex = (currentIndex + 1) % figures.length;
+        showImage(newIndex);
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (!modal.classList.contains('hidden')) {
+            if (e.key === 'ArrowLeft') {
+                const newIndex = (currentIndex - 1 + figures.length) % figures.length;
+                showImage(newIndex);
+            } else if (e.key === 'ArrowRight') {
+                const newIndex = (currentIndex + 1) % figures.length;
+                showImage(newIndex);
+            } else if (e.key === 'Escape') {
+                modal.classList.add('hidden');
+            }
+        }
+    });
+});
+</script>
 </html>

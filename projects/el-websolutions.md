@@ -8,6 +8,16 @@ tags: ["Svelte", "GSAP", "HTML", "CSS", "JavaScript", "API", "PHP", "UX", "UI", 
 links:
   - url: "https://el-websolutions.com/"
     caption: "Live website"
+gallery:
+  - src: "/assets/projects/el-websolutions/Screenshot-Nov-2024.png"
+    alt: "Home screen EL Websolutions"
+    caption: "Homescreen"
+  - src: "/assets/projects/el-websolutions/Screenshot 2024-11-21 171452.png"
+    alt: "Diensten overzicht EL Websolutions"
+    caption: "Diensten overzicht"
+  - src: "/assets/projects/el-websolutions/Screenshot 2024-11-21 171612.png"
+    alt: "Review overzicht EL Websolutions"
+    caption: "Review overzicht"
 ---
 
 Voor mijn eigen bedrijf heb ik een volledig op maat gemaakte website ontwikkeld met behulp van **Svelte**. De website dient als visitekaartje en toont niet alleen wat ik gedaan heb en aanbied, maar biedt bezoekers ook de mogelijkheid om eenvoudig contact met mij op te nemen.
@@ -39,22 +49,3 @@ Naast de basisfunctionaliteiten heb ik extra functies toegevoegd om de website v
 ### Volledig gecustomized
 
 De website is volledig op maat ontworpen en gebouwd. Ik heb aandacht besteed aan elk detail, van de visuele stijl tot de onderliggende code, om ervoor te zorgen dat de site precies aansluit bij mijn merkidentiteit en doelen.
-
-<hr>
-
-<h3>Gallery:</h3>
-
-<div class="project__foto_grid">
-    <figure>
-        <img src="/assets/projects/el-websolutions/Screenshot-Nov-2024.png" alt="Home screen EL Websolutions">
-        <figcaption>Homescreen</figcaption>
-    </figure>
-    <figure>
-        <img src="/assets/projects/el-websolutions/Screenshot 2024-11-21 171452.png" alt="Diensten overzicht EL Websolutions">
-        <figcaption>Diensten overzicht</figcaption>
-    </figure>
-    <figure>
-        <img src="/assets/projects/el-websolutions/Screenshot 2024-11-21 171612.png" alt="Review overzicht EL Websolutions">
-        <figcaption>Review overzicht</figcaption>
-    </figure>
-</div>

@@ -4,10 +4,14 @@ description: Random outfit generator voor ons kledingmerk DICE Label, dat ik sam
 thumbnail: /assets/projects/DICE-Label/Screenshot_DICE_Label.png
 finished: Actief
 date: 
-tags: ["Wordpress", "Maatwerk", "Woocommerce", "CSS", "JavaScript", "HTML", "Ondernemen"]
+tags: ["Wordpress", "Woocommerce", "CSS", "JavaScript", "HTML", "Ondernemen"]
 links:
   - url: "https://dicelabel.com/"
     caption: "Live website"
+gallery:
+  - src: "/assets/projects/DICE-Label/Screenshot_DICE_Label.png"
+    alt: "Home screen DICE Label"
+    caption: "Homescreen DICE Label"
 ---
 
 Voor ons kledingmerk **DICE Label**, dat ik samen met mijn compagnon Max opricht, ligt mijn focus op het ontwikkelen van een unieke plugin voor WooCommerce.
@@ -21,14 +25,3 @@ Op dit moment is de functie live en werkt de random generator, maar we hebben mo
 ## Waarom geen details?
 
 Ik deel bewust niet te veel informatie over hoe de plugin technisch werkt of hoe deze is gerealiseerd. Dit om te voorkomen dat ons unieke concept eenvoudig wordt gekopieerd.
-
-<hr>
-
-<h3>Gallery:</h3>
-
-<div class="project__foto_grid">
-    <figure>
-        <img src="/assets/projects/DICE-Label/Screenshot_DICE_Label.png" alt="Home screen DICE Label">
-        <figcaption>Homescreen DICE Label</figcaption>
-    </figure>
-</div>
