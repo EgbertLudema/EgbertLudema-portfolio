@@ -17,7 +17,7 @@
     </script>
 </head>
 <body>
-    <div class="container">
+    <div class="container" tabindex="-1">
         {% include "nav.html" %}    
         <main class="project">
             <div class="project__header">
@@ -65,6 +65,7 @@
                     {% endif %}
                     <div class="fullscreen-content">
                         <img src="" alt="Fullscreen view">
+                        <figcaption class="fullscreen-caption"></figcaption>
                     </div>
                     {% if gallerySize > 1 %}
                         <button class="next-modal" aria-label="Next image">
@@ -77,7 +78,19 @@
                 <button class="close-modal" aria-label="Close fullscreen view">×</button>
             </div>
             
-            
+            <!-- Links -->
+            {% if links %}
+                <hr class="hr_secondair">
+                <h3>Links:</h3>
+                <div class="project__bottom_links">
+                    {% for link in links %}
+                    <a href="{{ link.url }}" class="secondair_btn" target="_blank">
+                        {{ link.caption }}
+                    </a>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
             <hr class="hr_secondair">
             <h3>Tags:</h3>
             <div class="project__tags">
@@ -97,6 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const figures = Array.from(document.querySelectorAll('.project__foto_grid figure'));
     const modal = document.querySelector('.fullscreen-modal');
     const modalImage = modal.querySelector('img');
+    const modalCaption = modal.querySelector('.fullscreen-caption');
     const closeModalButton = modal.querySelector('.close-modal');
     const prevModalButton = modal.querySelector('.prev-modal');
     const nextModalButton = modal.querySelector('.next-modal');
@@ -107,7 +121,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const showImage = (index) => {
         const figure = figures[index];
         const imgSrc = figure.dataset.fullscreen;
+        const captionText = figure.querySelector('figcaption')?.textContent || '';
         modalImage.src = imgSrc;
+        modalCaption.textContent = captionText;
         currentIndex = index;
         modal.classList.remove('hidden');
     };
