@@ -35,7 +35,16 @@ permalink: /projecten/
                 <div class="project__heading">
                     <div class="project__title">
                         <h2>{{ post.data.title }}</h2>
-                        <p class="project__date">{{ post.data.finished }}</p>
+                        <p class="project__date">
+                            {% if post.data.finished == "Actief" %}
+                                <span class="status status--active">
+                                    <span class="status__icon animation__blink"></span>
+                                    {{ post.data.finished }}
+                                </span>
+                            {% else %}
+                                {{ post.data.finished }}
+                            {% endif %}
+                        </p>
                     </div>
                     <div class="project__discover">
                         <a class="secondair_btn" href="{{ post.url }}">discover<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18,12h0a2,2,0,0,0-.59-1.4l-4.29-4.3a1,1,0,0,0-1.41,0,1,1,0,0,0,0,1.42L15,11H5a1,1,0,0,0,0,2H15l-3.29,3.29a1,1,0,0,0,1.41,1.42l4.29-4.3A2,2,0,0,0,18,12Z"/></svg></a>

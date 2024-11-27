@@ -141,6 +141,7 @@
 .cd-timeline-content .timeline-content-info {
     background: var(--color-blue);
     padding: 5px 10px;
+    margin: 10px 0;
     color: #fff;
     font-size: 12px;
     border-radius: var(--border-radius-sm);
@@ -195,7 +196,7 @@
     color: var(--color-blue);
 }
 .cd-timeline-content h2 {
-    margin: 0 0 10px;
+    margin: 0;
 }
 .cd-timeline-content p{
     font-size: 0.8125rem;

@@ -8,6 +8,8 @@ tags: ["Laravel", "Filament", "Supabase", "HTML", "CSS", "JavaScript"]
 links:
   - url: "https://github.com/EgbertLudema/Steunpunt-Friesland"
     caption: "github"
+  - url: "https://www.youtube.com/watch?v=by2yV81nWoo"
+    caption: "video"
 gallery:
   - src: "/assets/projects/steunpunt-friesland/login.png"
     alt: "Login Steunpunt Friesland"
