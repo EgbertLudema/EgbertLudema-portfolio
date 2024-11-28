@@ -1,21 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
-    <link rel="icon" href="/assets/images/favicon.png" type="image/png">
-    <link rel="stylesheet" href="/css/style.css">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QM3RGPNLQ7"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-QM3RGPNLQ7');
-    </script>
-</head>
+{% include "head.html" %}
 <body>
     <div class="container" tabindex="-1">
         {% include "nav.html" %}
