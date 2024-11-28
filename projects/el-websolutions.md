@@ -1,5 +1,5 @@
 ---
-title: Mijn bedrijf website
+title: Website eigen bedrijf
 description: Een volledig gecustomizede website voor mijn eigen bedrijf, ontwikkeld met Svelte.
 thumbnail: /assets/projects/el-websolutions/Screenshot-Nov-2024.png
 finished: Actief

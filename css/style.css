@@ -55,12 +55,21 @@ img{
     width: fit-content;
     transition: all .3s ease;
     text-decoration: none;
-    padding: 8px 8px 8px 10px;
-    border: 2px solid var(--color-blue);
+    padding: 10px 10px 10px 12px;
+    font-size: 16px;
     border-radius: var(--border-radius);
+}
+.primary_btn svg{
+    fill: #fff;
+    transition: transform .3s ease .3s;
+    width: 24px;
 }
 .primary_btn:hover{
     transform: translateY(-2px);
+    text-decoration: none;
+}
+.primary_btn:hover svg{
+    transform: translateX(2px);
 }
 .secondair_btn{
     text-decoration: none;
@@ -282,6 +291,7 @@ hr.hr_secondair{
     gap: 10px;
     border: 1px solid var(--color-border);
     transition: all .3s ease;
+    cursor: default;
 }
 .skill:hover{
     transform: scale(1.01);
