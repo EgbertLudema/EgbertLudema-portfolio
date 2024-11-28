@@ -23,6 +23,14 @@
         </button>
         <nav class="site-header__nav">
             <ul class="site-header__items">
+                <li class="site-header__item">
+                    <a
+                        class="site-header__link{% if page.url == '/' %} site-header__link--active{% endif %}"
+                        href="/"
+                    >
+                        Home
+                    </a>
+                </li>
                 {% for entry in collections.navPages | eleventyNavigation | sort(attribute='order') %}
                     <li class="site-header__item">
                         <a
