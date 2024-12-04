@@ -2,7 +2,7 @@
 title: TTTXtreme App Design
 description: IK heb mijn eigen app gedesigned, hierbij hield ik rekening met, heuristieken, UI en UX.
 description-eng: Designed my own tic tac toe extreme game.
-thumbnail: /assets/projects/tttxtreme_app/Thumbnail.png
+thumbnail: /assets/projects/tttxtreme_app/design/Thumbnail-Design.png
 finished: Jul 2024
 date: 2024-07-03
 tags: ["UX", "UI", "Design", "Figma"]
