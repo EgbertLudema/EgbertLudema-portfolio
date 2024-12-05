@@ -118,7 +118,7 @@ img{
     align-items: center;
 }
 .status__icon_finished svg{
-    fill: var(--color-text);
+    fill: #555;
     width: 10px;
     height: 10px;
 }
