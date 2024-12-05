@@ -2,9 +2,9 @@
 title: DICE Label
 description: Random outfit generator voor ons kledingmerk DICE Label, dat ik samen met mijn compagnon Max opricht.
 thumbnail: /assets/projects/DICE-Label/Screenshot_DICE_Label.png
-finished: Actief
+finished: In Progress
 date: 
-tags: ["Wordpress", "Woocommerce", "CSS", "JavaScript", "HTML", "Ondernemen"]
+tags: ["Wordpress", "CSS", "JavaScript", "HTML"]
 links:
   - url: "https://dicelabel.com/"
     caption: "Live website"

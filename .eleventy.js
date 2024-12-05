@@ -3,8 +3,8 @@ const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 // Get all projects and sort them(active first, then by date)
 function getSortedProjects(collectionApi) {
     return collectionApi.getFilteredByTag("project").sort((a, b) => {
-        const isActiveA = a.data.finished === "Actief";
-        const isActiveB = b.data.finished === "Actief";
+        const isActiveA = a.data.finished === "In Progress";
+        const isActiveB = b.data.finished === "In Progress";
 
         // Active projects first
         if (isActiveA && !isActiveB) return -1;

@@ -4,7 +4,7 @@ description: Voor een side-quest op school heb ik mijn eigen web game gemaakt.
 thumbnail: /assets/projects/tttextreme_website/screenshot_tttextreme_website.png
 finished: Jan 2024
 date: 2024-01-01
-tags: ["PHP", "API", "MYSQL", "HTML", "CSS", "JavaScript"]
+tags: ["PHP", "API", "MYSQL", "HTML", "CSS", "JavaScript", "UX"]
 links:
   - url: "https://tttextreme.com/"
     caption: "Live website"
