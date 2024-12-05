@@ -98,19 +98,29 @@ img{
 .status {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.3rem;
     font-weight: bold;
     font-size: .7rem;
 }
 .status--active {
-    color: var(--color-green);
+    color: var(--color-blue);
 }
 .status__icon {
-    width: 0.5rem;
-    height: 0.5rem;
-    background-color: var(--color-green);
+    background-color: var(--color-blue);
     border-radius: 50%;
     display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+}
+.status__icon_finished{
+    height: 15px;
+    display: flex;
+    align-items: center;
+}
+.status__icon_finished svg{
+    fill: var(--color-text);
+    width: 10px;
+    height: 10px;
 }
 /* Headings */
 h1{
@@ -292,10 +302,6 @@ hr.hr_secondair{
     border: 1px solid var(--color-border);
     transition: all .3s ease;
     cursor: default;
-}
-.skill:hover{
-    transform: scale(1.01);
-    box-shadow: var(--shadow);
 }
 .skill__img{
     width: 35px;

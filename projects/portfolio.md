@@ -2,7 +2,7 @@
 title: Mijn portfolio website
 description: Een website gebouwd d.m.v. 11ty, waardoor ik gemakkelijk nieuwe projecten kan toevoegen.
 thumbnail: /assets/projects/portfolio/homepage.png
-finished: Actief
+finished: In Progress
 date:
 tags: ["11ty", "HTML", "CSS", "JavaScript", "UX", "UI"]
 links:
@@ -25,4 +25,4 @@ Door gebruik te maken van Markdown kun je eenvoudig nieuwe projecten toevoegen, 
 ---
 
 ### Gallerij:
-Serieus😂? Is een gallerij hiervoor echt nodig!
+Ik denk niet dat een gallerij nodig is... 😅

@@ -2,9 +2,9 @@
 title: Website eigen bedrijf
 description: Een volledig gecustomizede website voor mijn eigen bedrijf, ontwikkeld met Svelte.
 thumbnail: /assets/projects/el-websolutions/Screenshot-Nov-2024.png
-finished: Actief
+finished: In Progress
 date:
-tags: ["Svelte", "GSAP", "HTML", "CSS", "JavaScript", "API", "PHP", "UX", "UI", "Ondernemen"]
+tags: ["Svelte", "GSAP", "HTML", "CSS", "JavaScript", "API", "PHP", "UX", "UI",]
 links:
   - url: "https://el-websolutions.com/"
     caption: "Live website"
