@@ -4,7 +4,7 @@ description: Als lead developer was ik verantwoordelijk voor het ontwikkelen van
 thumbnail: /assets/projects/steunpunt-friesland/Screenshot_Tool_SteunpuntFriesland.png
 finished: Jul 2024
 date: 2024-07-01
-tags: ["Laravel", "Filament", "Supabase", "HTML", "CSS", "JavaScript"]
+tags: ["Front-end", "Back-end"]
 links:
   - url: "https://github.com/EgbertLudema/Steunpunt-Friesland"
     caption: "github"

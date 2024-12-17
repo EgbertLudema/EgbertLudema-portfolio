@@ -4,7 +4,7 @@ description: Een website gebouwd d.m.v. 11ty, waardoor ik gemakkelijk nieuwe pro
 thumbnail: /assets/projects/portfolio/homepage.png
 finished: In Progress
 date:
-tags: ["11ty", "HTML", "CSS", "JavaScript", "UX", "UI"]
+tags: ["11ty", "Design", "Front-end"]
 links:
   - url: "https://github.com/EgbertLudema/EgbertLudema-portfolio"
     caption: "github"

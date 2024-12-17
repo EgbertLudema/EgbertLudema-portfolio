@@ -4,7 +4,7 @@ description: Random outfit generator voor ons kledingmerk DICE Label, dat ik sam
 thumbnail: /assets/projects/DICE-Label/Screenshot_DICE_Label.png
 finished: In Progress
 date: 
-tags: ["Wordpress", "CSS", "JavaScript", "HTML"]
+tags: ["Wordpress", "Front-end", "Back-end"]
 links:
   - url: "https://dicelabel.com/"
     caption: "Live website"

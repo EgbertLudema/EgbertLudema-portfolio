@@ -5,7 +5,7 @@ description-eng: Building my designed TTTXtreme app for Android using Kotlin and
 thumbnail: /assets/projects/tttxtreme_app/code/Thumbnail-Coding.png
 finished: In Progress
 date: 
-tags: ["Kotlin", "Jetpack Compose"]
+tags: ["Kotlin"]
 ---
 
 ## Code
