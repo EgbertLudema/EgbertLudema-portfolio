@@ -4,7 +4,7 @@ description: Voor een schoolopdracht kregen wij van onze opdrachtgever "Spelrebe
 thumbnail: /assets/projects/spelrebel/SpelRebel_homescreen.png
 finished: Nov 2023
 date: 2023-11-27
-tags: ["UX", "UI", "Design", "Accessibility"]
+tags: ["Design", "Accessibility"]
 links:
   - url: "https://youtu.be/sZPfk1LbOl0"
     caption: "video"

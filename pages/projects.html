@@ -23,6 +23,9 @@ permalink: /projecten/
             </button>
         {% endfor %}
     </div>
+    <div id="noTagsMessage" style="display: none; font-size: 14px; margin-top: 7px; position: absolute;">
+        No tags found
+    </div>
 </div>
 
 <div class="project__grid">
@@ -109,10 +112,17 @@ document.addEventListener("DOMContentLoaded", () => {
     // Filter tags based on search input
     searchInput.addEventListener("input", () => {
         const searchValue = searchInput.value.toLowerCase();
+        let anyVisible = false;
+
         filterButtons.forEach(button => {
             const tag = button.dataset.tag.toLowerCase();
-            button.style.display = tag.includes(searchValue) ? "inline-block" : "none";
+            const isMatch = tag.includes(searchValue);
+            button.style.display = isMatch ? "inline-block" : "none";
+            if (isMatch) anyVisible = true;
         });
+
+        // Show or hide the "No tags found" message
+        document.getElementById("noTagsMessage").style.display = anyVisible ? "none" : "block";
     });
 
     // Update filtering based on selected tags

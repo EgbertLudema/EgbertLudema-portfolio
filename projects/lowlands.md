@@ -5,7 +5,7 @@ description-eng: For a school minicase, I was tasked with redesigning the Lowlan
 thumbnail: /assets/projects/lowlands/LL23_homepage.png
 finished: Okt 2023
 date: 2023-10-19
-tags: ["UX", "UI", "Design", "Accessibility"]
+tags: ["Design", "Accessibility"]
 links:
   - url: "https://www.youtube.com/watch?v=mbZbLFkKeOg"
     caption: "video"
