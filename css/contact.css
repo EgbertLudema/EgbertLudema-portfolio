@@ -30,6 +30,7 @@
     border-radius: var(--border-radius-sm);
     box-shadow: var(--shadow);
     transition: all .3s ease;
+    animation: look-at-me 5s infinite;
 }
 #contact .right .el-websolutions:hover{
     transform: translateY(-5px) scale(1.02);
@@ -48,5 +49,13 @@
     }
     #contact .left h3{
         font-size: 2.5em;
+    }
+}
+@keyframes look-at-me {
+    0%, 100%, 40%, 50%, 60% {
+        transform: scale(1);
+    }
+    45%, 55% {
+        transform: scale(1.04);
     }
 }

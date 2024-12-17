@@ -4,7 +4,7 @@ description: Een volledig gecustomized website voor mijn eigen bedrijf, ontwikke
 thumbnail: /assets/projects/el-websolutions/Screenshot-Nov-2024.png
 finished: In Progress
 date:
-tags: ["Svelte", "GSAP", "Front-end", "Back-end", "API"]
+tags: ["Design", "Front-end", "Back-end", "API"]
 links:
   - url: "https://el-websolutions.com/"
     caption: "Live website"
