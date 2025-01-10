@@ -6,6 +6,9 @@ thumbnail: /assets/projects/tttxtreme_app/design/Thumbnail-Design.png
 finished: Jul 2024
 date: 2024-07-03
 tags: ["Design", "App"]
+links:
+  - url: "https://www.reddit.com/r/TTTXtreme/"
+    caption: "reddit"
 gallery:
   - src: "/assets/projects/tttxtreme_app/design/landing_screen.png"
     alt: "Landing screen TTTXtreme"

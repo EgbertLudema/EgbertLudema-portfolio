@@ -2,8 +2,8 @@
 title: Mijn portfolio website
 description: Een website gebouwd d.m.v. 11ty, waardoor ik gemakkelijk nieuwe projecten kan toevoegen.
 thumbnail: /assets/projects/portfolio/homepage.png
-finished: In Progress
-date:
+finished: Jan 2025
+date: 2025-01-10
 tags: ["Design", "Front-end"]
 links:
   - url: "https://github.com/EgbertLudema/EgbertLudema-portfolio"
