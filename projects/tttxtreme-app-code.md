@@ -6,7 +6,12 @@ thumbnail: /assets/projects/tttxtreme_app/code/Thumbnail-Coding.png
 finished: In Progress
 date: 
 tags: ["Kotlin", "App"]
+links:
+  - url: "https://www.reddit.com/r/TTTXtreme/"
+    caption: "reddit"
 ---
 
 ## Code
 *Currently working on building the app for android using Kotlin and Jetpack Compose*
+
+Checkout my reddit page for updates: [Reddit](https://www.reddit.com/r/TTTXtreme/)
