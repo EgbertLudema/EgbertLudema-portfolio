@@ -25,16 +25,16 @@ Ensure you have the following installed on your system:
 ### Installation
 1. Clone this repository:
    ```bash
-     git clone [https://github.com/yourusername/portfolio-website.git](https://github.com/EgbertLudema/EgbertLudema-portfolio)
+     git clone https://github.com/EgbertLudema/EgbertLudema-portfolio
    ```
 2. Install dependencies:
-  ```bash
-    npm install
-  ```
+   ```bash
+     npm install
+   ```
 3. Start the development server:
-  ```bash
-    npx @11ty/eleventy --serve
-  ```
+   ```bash
+     npx @11ty/eleventy --serve
+   ```
 4. Open your browser and navigate to http://localhost:8080.
 
 ## Acknowledgements
