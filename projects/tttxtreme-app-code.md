@@ -9,9 +9,13 @@ tags: ["Kotlin", "App"]
 links:
   - url: "https://www.reddit.com/r/TTTXtreme/"
     caption: "reddit"
+  - url: "https://youtu.be/2d07WxH9Pbc"
+    caption: "Screenrecording"
 ---
 
 ## Code
 *Currently working on building the app for android using Kotlin and Jetpack Compose*
 
-Checkout my reddit page for updates: [Reddit](https://www.reddit.com/r/TTTXtreme/)
+Check out the latest screen recording of the current stages of the app: [Youtube](https://youtu.be/2d07WxH9Pbc)
+
+Also checkout my reddit page for updates: [Reddit](https://www.reddit.com/r/TTTXtreme/)
