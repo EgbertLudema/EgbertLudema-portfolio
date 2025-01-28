@@ -26,6 +26,22 @@
     transition: height 0.3s ease;
     overflow: hidden;
 }
+.timelines:before, .timelines:after{
+    content: '';
+    position: absolute;
+    background: red;
+    width: 30px;
+    height: 100%;
+    z-index: 999;
+}
+.timelines:before {
+    left: 0;
+    background: linear-gradient(90deg, #fff, transparent);
+}
+.timelines:after{
+    right: 0;
+    background: linear-gradient(270deg, #fff, transparent);
+}
 /* Initial hidden state for timelines */
 #work-timeline, #education-timeline {
     position: absolute;
