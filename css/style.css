@@ -581,6 +581,9 @@ hr.hr_secondair{
     gap: 20px;
     width: 100%;
 }
+.fullscreen-modal_container.manual_photo_grid{
+    justify-content: center;
+}
 .fullscreen-content img {
     max-height: calc(100vh - 40px);
     border-radius: var(--border-radius-sm);
@@ -613,6 +616,36 @@ hr.hr_secondair{
 }
 .hidden {
     display: none;
+}
+/* Manual foto grid */
+.manual_foto_grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, calc(33% - 5px)));
+    gap: 10px;
+    align-items: center;
+    margin: 30px 0;
+}
+.manual_foto_grid figure {
+    overflow: clip;
+}
+/* FixYourFinance colors: */
+.fyf-purple,
+.fyf-orange,
+.fyf-yellow,
+.fyf-green{
+    font-weight: bold;
+}
+.fyf-purple{
+    color: #9b42ff;
+}
+.fyf-orange{
+    color: #ff8d00;
+}
+.fyf-yellow{
+    color: #e6ae00;
+}
+.fyf-green{
+    color: #14d354;
 }
 @media (max-width: 768px) {
     h1{
