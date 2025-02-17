@@ -24,7 +24,7 @@
     position: relative;
     display: flex;
     transition: height 0.3s ease;
-    overflow: hidden;
+    overflow: hidden; 
 }
 .timelines:before, .timelines:after{
     content: '';
