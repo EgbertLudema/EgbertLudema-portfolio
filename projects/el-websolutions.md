@@ -1,9 +1,9 @@
 ---
-title: Website eigen bedrijf
+title: Website Freelance V1
 description: Een volledig gecustomized website voor mijn eigen bedrijf, ontwikkeld met Svelte.
 thumbnail: /assets/projects/el-websolutions/Screenshot-Nov-2024.png
-finished: In Progress
-date:
+finished: Okt 2024
+date: 2024-10-20
 tags: ["Design", "Front-end", "Back-end", "API"]
 links:
   - url: "https://el-websolutions.com/"
@@ -49,3 +49,7 @@ Naast de basisfunctionaliteiten heb ik extra functies toegevoegd om de website v
 ### Volledig gecustomized
 
 De website is volledig op maat ontworpen en gebouwd. Ik heb aandacht besteed aan elk detail, van de visuele stijl tot de onderliggende code, om ervoor te zorgen dat de site precies aansluit bij mijn merkidentiteit en doelen.
+
+<hr class="hr_secondair">
+
+*Het ontwerp van mijn website is inmiddels veranderd en dus niet meer te zien!*
